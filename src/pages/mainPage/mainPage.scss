@@ -1,0 +1,76 @@
+@import '../../styles/mixins.scss';
+@import '../../styles/common.scss';
+
+@keyframes arrow-down {
+    0%{
+        transform: translateY(-$dv-space);
+    }
+    50%{
+        transform: translateY($dv-space);
+    }
+    100%{
+        transform: translateY(-$dv-space);
+    }
+}
+
+.dv-main-page {
+    height: calc(100vh - #{$dv-nav-height});    
+    position: relative;
+
+    @extend .dv-padding;
+    @include bg-page($name: "soccer_ball");
+
+    @include media-breakpoint-down(sm) {
+        height: calc(100vh - #{$dv-nav-height-mobile});  
+    }
+
+    &__name {
+        color: $dv-white;
+        text-align: center;
+        text-transform: uppercase;
+        transform: translateY(-50%);
+        
+        @include relative($top: 50%);
+    }
+
+    &__title {
+        font: 214px $dv-font-family-accent;
+        line-height: 0.9;
+        margin-bottom: $dv-padding-lg;
+
+        @include media-breakpoint-down(sm) {
+            font-size: 150px;
+        }
+
+        @include media-breakpoint-down(xs) {
+            font-size: 90px;
+        }
+
+        @include media-mobile-landscape {
+            font-size: 90px;
+        }
+    }
+
+    &__subtitle {
+        font: $dv-font-size-xl $dv-font-family-accent;
+        letter-spacing: 0.1em;
+        margin-bottom: $dv-padding-sm;
+    }
+
+    &__tagline {
+        font: $dv-font-size-lg $dv-font-family;
+        margin-bottom: 0;
+        text-transform: none;
+    }
+
+    &__subtitle,
+    &__tagline {
+        @include media-breakpoint-down(xs) {
+            font-size: $dv-font-size-xs;
+        }
+
+        @include media-mobile-landscape {
+            font-size: $dv-font-size-base;
+        }
+    }
+}

@@ -1,0 +1,84 @@
+@import '../../styles/mixins.scss';
+@import '../../styles/common.scss';
+
+.dv-nav {
+    background: rgba($color: $dv-black, $alpha: 0.85);
+    height: $dv-nav-height;
+    z-index: 1;
+
+    @include sticky($top: 0);
+
+    @include media-breakpoint-down(sm) {
+        height: $dv-nav-height-mobile;
+    }
+
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 100%;
+        padding: 0 $dv-padding-lg;
+
+        @extend .dv-container;
+
+        @include media-breakpoint-down(md) {
+            padding: 0 $dv-padding-md; 
+        }
+    
+        @include media-breakpoint-down(sm) {
+            padding: 0 $dv-padding-sm; 
+        }
+    }
+
+    &__icon-menu {
+        background: url(../../assets/icons/humburger_menu.svg) no-repeat center / cover;
+        @include size(24px);
+
+        &:focus {
+            box-shadow: none;
+        }
+    }
+
+    &__icon {
+        display: inline-block;
+        @include size(24px);
+
+        & + .dv-nav__icon {
+            margin-left: $dv-space;
+        }
+    }
+
+    &__icon_inst {
+        background: url(../../assets/icons/icon_inst.svg) no-repeat center / cover;
+    }
+
+    &__icon_vk {
+        background: url(../../assets/icons/icon_vk.svg) no-repeat center / cover;
+    }
+
+    &__modal {        
+        .modal-dialog {
+            margin: 0;
+            max-width: 100%;
+        }
+
+        .modal-content {
+            background-color: $dv-black;
+            height: 100vh;
+            text-align: center;
+            overflow-y: scroll;
+
+            .modal-header {
+                border-bottom: none;
+
+                .close {
+                    background: url(../../assets/icons/close.svg) no-repeat center;
+                    color: $dv-white;
+                    opacity: 1;
+                    margin: 0 auto 0 0;
+                    padding: 10px;
+                }
+            }
+        }
+    }
+}

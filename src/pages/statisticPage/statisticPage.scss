@@ -1,0 +1,26 @@
+@import '../../styles/mixins.scss';
+@import '../../styles/common.scss';
+
+.dv-statistic-page {
+    min-height: calc(100vh - #{$dv-nav-height});
+    text-align: center;
+    position: relative;
+    
+    @extend .dv-padding;
+    @include bg-page($name: "football-field");
+
+    @include media-breakpoint-down(sm) {
+        min-height: calc(100vh - #{$dv-nav-height-mobile});  
+    }
+
+    .col-xl-6 + .col-xl-6 {
+
+        @include media-breakpoint-down(lg) {
+            margin-top: $dv-padding-lg;
+        }
+
+        @include media-breakpoint-down(sm) {
+            margin-top: $dv-padding-md;
+        }
+    }
+}

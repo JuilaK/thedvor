@@ -1,0 +1,47 @@
+@import '~bootstrap/scss/bootstrap-grid.scss';
+@import './variables.scss';
+
+@mixin size($width, $height: $width) {
+    width: $width;
+    height: $height;
+}
+
+//Position
+
+@mixin position($position, $top: null, $right: null, $bottom: null, $left: null) {
+  position: $position;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+@mixin absolute($args...) {
+  @include position(absolute, $args...);
+}
+
+@mixin relative($args...) {
+  @include position(relative, $args...);
+}
+
+@mixin fixed($args...) {
+  @include position(fixed, $args...);
+}
+
+@mixin sticky($args...) {
+  @include position(sticky, $args...);
+}
+
+//Background page
+
+@mixin bg-page($name) {
+  background: $dv-black-gradient-top, $dv-black-gradient-bottom, url(../assets/image/#{$name}.jpg) center / cover;
+}
+
+//Media query
+
+@mixin media-mobile-landscape {
+  @media screen and (max-width: $dv-breakpoints-lg) and (orientation: landscape) {
+    @content;
+  }
+}

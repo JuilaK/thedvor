@@ -1,0 +1,52 @@
+@import './mixins.scss';
+
+body {
+    background-color: $dv-black;
+}
+
+.dv-block-title {
+    color: $dv-white;
+    font: $dv-font-size-title-block $dv-font-family-accent;
+    letter-spacing: 4px;
+    margin-bottom: $dv-padding-md;
+    text-align: center;
+    text-transform: uppercase;
+
+    @include media-breakpoint-down(md) {
+        font-size: $dv-font-size-title-block-tablet;
+        margin-bottom: $dv-padding-sm;
+    }
+
+    @include media-breakpoint-down(sm) {
+        font-size: $dv-font-size-title-block-mobile;
+    }    
+}
+
+.dv-padding {
+    padding: $dv-padding-lg $dv-padding-lg calc(#{$dv-padding-lg + $dv-padding-xl + $dv-font-size-xs});
+
+    @include media-breakpoint-down(md) {
+        padding: $dv-padding-md $dv-padding-md calc(#{$dv-padding-md + $dv-padding-lg + $dv-font-size-xs}); 
+    }
+
+    @include media-breakpoint-down(sm) {
+        padding: $dv-padding-sm $dv-padding-sm 80px; 
+    }
+}
+
+.dv-container {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: $dv-max-width-screen;
+}
+
+.dv-section-padding {
+    border-radius: $dv-border-radius-lg;
+    padding: $dv-padding-lg;
+
+    @include media-breakpoint-down(sm) {
+        border-radius: $dv-border-radius;
+        padding: $dv-padding-md $dv-padding-sm;
+    }
+}
+

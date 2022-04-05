@@ -1,0 +1,60 @@
+@import '../../styles/mixins.scss';
+@import '../../styles/common.scss';
+
+.dv-statistic-table {
+    color: $dv-white;
+    background-color: rgba($color: $dv-black, $alpha: 0.5);
+    
+    @extend .dv-section-padding;
+
+    &__title {
+        font: $dv-font-size-xl $dv-font-family;
+        margin-bottom: $dv-padding-sm;
+        text-transform: uppercase;
+
+        @include media-breakpoint-down(md) {
+            font-size: $dv-font-size-lg;
+        }
+
+        @include media-breakpoint-down(sm) {
+            font-size: $dv-font-size-base;
+            margin-bottom: $dv-padding-xs;
+        }
+    }
+
+    .table {
+        margin-bottom: 0;
+
+        th, td {
+            color: $dv-white;
+            border-color: $dv-green;
+            font-size: $dv-font-size-base;
+            padding: 0.75rem 0.5rem;
+
+            @include media-breakpoint-down(md) {
+                font-size: $dv-font-size-sm;
+            }
+
+            @include media-breakpoint-down(sm) {
+                font-size: $dv-font-size-xs;
+            }
+        }
+
+        th {
+            color: $dv-green;
+            border-top: none;
+            font-family: $dv-font-family-medium;
+            font-weight: 400;
+            text-transform: uppercase;
+        }
+
+        td {
+            font-family: $dv-font-family;
+
+            sup {
+                top: -1em;
+                left: 0.5em;
+            }
+        }
+    }
+}

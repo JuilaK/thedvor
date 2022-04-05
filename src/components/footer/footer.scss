@@ -1,0 +1,34 @@
+@import '../../styles/mixins.scss';
+
+.dv-footer {
+    color: $dv-green;
+    font: $dv-font-size-xs $dv-font-family;
+    text-align: center;
+    transform: translateX(-50%);
+    
+    @include absolute($bottom: $dv-padding-lg, $left: 50%);
+
+    @include media-breakpoint-down(md) {
+        bottom: $dv-padding-md;
+    }
+
+    span + span {
+        margin-left: $dv-padding-md;
+
+        @include media-breakpoint-down(sm) {
+            margin-left: 0;
+            margin-top: $dv-padding-xs;
+        }        
+    }
+
+    span {
+        @include media-breakpoint-down(sm) {
+            display: block;
+        }
+    }
+
+    a {
+        color: $dv-white;
+        text-decoration: underline;
+    }
+}

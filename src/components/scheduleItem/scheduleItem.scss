@@ -1,0 +1,196 @@
+@import '../../styles/mixins.scss';
+
+$vs-size: 80px;
+$vs-size-tablet: 64px;
+$vs-size-mobile: 42px;
+$vs-size-xs-mobile: 36px;
+$team-logo-size: 110px;
+$team-logo-size-tablet: 80px;
+$team-logo-size-mobile: 54px;
+$team-logo-size-xs-mobile: 42px;
+
+.dv-schedule-item {
+    margin-top: $dv-padding-md; 
+
+    @include media-breakpoint-down(sm) {
+        margin-top: $dv-padding-sm;
+    }
+
+    &__time-place,
+    &__round {
+        background-color: $dv-white;
+        color: $dv-black;
+        display: inline-block;
+        font: $dv-font-size-base $dv-font-family;
+        padding: 10px $dv-padding-md;
+
+        @include media-breakpoint-down(md) {
+            font-size: $dv-font-size-xs;
+        }
+
+        @include media-breakpoint-down(sm) {
+            font-size: $dv-font-size-xxs;
+            padding: $dv-padding-xs $dv-padding-sm;
+        }
+    }
+
+    &__time-place {
+        border-top-left-radius: $dv-border-radius;
+        border-top-right-radius: $dv-border-radius;
+        line-height: 1;
+        min-width: 200px;
+        
+        @include media-breakpoint-down(md) {
+            min-width: 140px;
+        }
+    }
+
+    &__round {
+        border-bottom-left-radius: $dv-border-radius;
+        border-bottom-right-radius: $dv-border-radius;
+        text-transform: uppercase;
+    }
+
+    &__teams {
+        margin: -25px auto;
+        position: relative;
+
+        > * {
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        @include media-breakpoint-down(md) {
+            margin-bottom: -16px;
+            margin-top: -16px;
+        }
+
+        @include media-breakpoint-down(sm) {
+            margin-bottom: -14px;
+            margin-top: -11px;
+        }
+
+        @include media-breakpoint-down(xs) {
+            margin-bottom: -9px;
+            margin-top: -6px;
+        }
+    }
+
+    &__team-logo {
+        background-color: $dv-white;
+        background-position: center;
+        background-size: cover;
+        border: thin solid $dv-white;
+        border-radius: 50%;
+        position: relative;
+
+        @include size($team-logo-size);
+
+        @include media-breakpoint-down(md) {
+            @include size($team-logo-size-tablet);
+        }
+
+        @include media-breakpoint-down(sm) {
+            @include size($team-logo-size-mobile);
+        }
+
+        @include media-breakpoint-down(xs) {
+            @include size($team-logo-size-xs-mobile);
+        }
+
+        img {
+            width: 90%;
+        }
+    }
+
+    &__team-name {
+        border: thin solid $dv-white;
+        color: $dv-white;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        max-width: 360px;
+        font: $dv-font-size-lg $dv-font-family;
+
+        @include size(calc(50% - #{$team-logo-size - $dv-padding-lg}), 60px); 
+        
+        @include media-breakpoint-down(md) {
+            font-size: $dv-font-size-sm;
+            max-width: 280px;
+            @include size(calc(50% - #{$team-logo-size-tablet - $dv-padding-lg}), 48px); 
+        }
+
+        @include media-breakpoint-down(sm) {
+            font-size: $dv-font-size-xxs;
+            max-width: 200px;
+            @include size(calc(50% - #{$team-logo-size-mobile - $dv-padding-sm}), 32px); 
+        }
+
+        @include media-breakpoint-down(xs) {
+            width: calc(50% - #{$team-logo-size-xs-mobile - $dv-padding-sm});
+        }
+
+        &_first {
+            margin-left: -$dv-padding-lg;
+            padding: 0 calc(#{$vs-size/2}) 0 $dv-padding-lg;
+
+            @include media-breakpoint-down(md) {
+                padding: 0 calc(#{$vs-size-tablet/2}) 0 $dv-padding-lg;
+            }
+    
+            @include media-breakpoint-down(sm) {
+                margin-left: -$dv-padding-sm;
+                padding: 0 calc(#{$vs-size-mobile/2}) 0 calc(#{$dv-padding-sm});
+            }
+
+            @include media-breakpoint-down(xs) {
+                padding-right: calc(#{$vs-size-xs-mobile/2});
+            }
+        }
+
+        &_second {
+            margin-right: -$dv-padding-lg;
+            padding: 0 $dv-padding-lg 0 calc(#{$vs-size/2});
+
+            @include media-breakpoint-down(md) {
+                padding: 0 $dv-padding-lg 0 calc(#{$vs-size-tablet/2});
+            }
+    
+            @include media-breakpoint-down(sm) {
+                margin-right: -$dv-padding-sm;
+                padding: 0 calc(#{$dv-padding-sm}) 0 calc(#{$vs-size-mobile/2})
+            }
+
+            @include media-breakpoint-down(xs) {
+                padding-left: calc(#{$vs-size-xs-mobile/2});
+            }
+        }
+    }
+
+    &__vs {
+        background-color: $dv-green;
+        border: thin solid $dv-white;
+        border-radius: 50%;
+        color: $dv-white;
+        font: $dv-font-size-xxl $dv-font-family;
+        line-height: calc(#{$vs-size} - 6px);
+        transform: translate(-50%, -50%);
+
+        @include absolute($top: 50%, $left: 50%);
+        @include size($vs-size);
+
+        @include media-breakpoint-down(md) {
+            font-size: $dv-font-size-xl;
+            line-height: calc(#{$vs-size-tablet} - 4px);
+
+            @include size($vs-size-tablet);
+        }
+
+        @include media-breakpoint-down(sm) {
+            font-size: $dv-font-size-lg;
+            line-height: calc(#{$vs-size-mobile} - 2px);
+
+            @include size($vs-size-mobile);
+        }
+    }
+}

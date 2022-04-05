@@ -1,0 +1,51 @@
+@import '../../styles/mixins.scss';
+
+$border: thin solid $dv-white;
+$border-transparent: thin solid transparent;
+
+.ds-nav-item {
+    border-bottom: $border-transparent;
+
+    & + .ds-nav-item {
+        @include media-breakpoint-up(md) { 
+            margin-left: $dv-space;
+        }        
+    }
+
+    &:last-child {
+        .nav-link {
+            @include media-breakpoint-down(sm) {
+                border-bottom: none;
+            }
+        }
+    }
+
+    .nav-link {
+        border-bottom: $border-transparent;
+        color: $dv-white;
+        font-family: $dv-font-family;
+        font-size: $dv-font-size-lg;
+        letter-spacing: 0.03em;
+        line-height: 1;
+        text-transform: uppercase;
+        transition: 1s;
+
+        &:hover,
+        &.active {  
+            @include media-breakpoint-up(md) { 
+                border-bottom: $border;
+            }
+        }
+
+        @include media-breakpoint-down(md) { 
+            font-size: $dv-font-size-base;
+        }
+
+        @include media-breakpoint-down(sm) {
+            border-bottom: $border;
+            display: inline-block; 
+            font-size: $dv-font-size-lg;
+            padding: 20px;
+        }
+    }
+}

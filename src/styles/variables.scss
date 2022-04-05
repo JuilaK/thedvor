@@ -1,0 +1,45 @@
+@import './fonts.scss';
+
+$dv-white:                            #F1F0EA;
+$dv-black:                            #070707;
+$dv-green:                            #668813;
+$dv-black-gradient-bottom:              linear-gradient(transparent 40vh, $dv-black 100%);
+$dv-black-gradient-top:                 linear-gradient($dv-black 0%, transparent 70vh);
+
+$dv-font-family-accent:                 "Bicubik", Arial, sans-serif;
+$dv-font-family:                        "Roboto-Regular", "Helvetica Neue", Arial, sans-serif;
+$dv-font-family-medium:                 "Roboto-Medium", "Helvetica Neue", Arial, sans-serif;
+$dv-font-family-bold:                   "Roboto-Bold", "Helvetica Neue", Arial, sans-serif;
+
+$dv-font-size-base:                     16px;
+$dv-font-size-xxs:                      $dv-font-size-base * .625; //~10px
+$dv-font-size-xs:                       $dv-font-size-base * .75; //~12px
+$dv-font-size-sm:                       $dv-font-size-base * .875; //~14px
+$dv-font-size-lg:                       $dv-font-size-base * 1.25; //~20px
+$dv-font-size-xl:                       $dv-font-size-base * 1.75; //~28px
+$dv-font-size-xxl:                      $dv-font-size-base * 2.25; //~36px
+$dv-font-size-title-block:              $dv-font-size-base * 3.25; //~52px
+$dv-font-size-title-block-tablet:       $dv-font-size-base * 2.5; //~40px
+$dv-font-size-title-block-mobile:       $dv-font-size-base * 1.75; //~28px
+
+$dv-max-width-screen:                   1440px;
+$dv-padding-xs:                         5px;
+$dv-padding-sm:                         15px;
+$dv-padding-md:                         20px;
+$dv-padding-lg:                         30px;
+$dv-padding-xl:                         40px;
+
+$dv-space:                              10px;
+$dv-space-m:                            20px;
+
+$dv-border-radius:                      10px;
+$dv-border-radius-lg:                   20px;
+
+$dv-breakpoints-xs:                     0;
+$dv-breakpoints-sm:                     576px;
+$dv-breakpoints-md:                     768px;
+$dv-breakpoints-lg:                     992px;
+$dv-breakpoints-xl:                     1200px;
+
+$dv-nav-height:                         70px;
+$dv-nav-height-mobile:                  50px;

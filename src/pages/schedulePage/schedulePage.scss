@@ -1,0 +1,88 @@
+@import '../../styles/mixins.scss';
+@import '../../styles/common.scss';
+
+.dv-schedule-page {
+    min-height: calc(100vh - #{$dv-nav-height});
+    text-align: center;
+    position: relative;
+    
+    @extend .dv-padding;
+    @include bg-page($name: "grass_field");
+
+    @include media-breakpoint-down(sm) {
+        min-height: calc(100vh - #{$dv-nav-height-mobile});  
+    }
+
+    &__tournament {
+        background-color: rgba($color: $dv-black, $alpha: 0.5);
+
+        @extend .dv-section-padding;
+
+        @include media-breakpoint-down(sm) {
+            margin-left: -$dv-padding-sm;
+            margin-right: -$dv-padding-sm;
+        }
+
+        + .dv-schedule-page__tournament {
+            margin-top: $dv-padding-xl;
+
+            @include media-breakpoint-down(md) {
+                margin-top: $dv-padding-lg;
+            }
+        }
+    }
+    
+    &__tournament-name {
+        color: $dv-white;
+        font: $dv-font-size-xxl $dv-font-family-medium;
+        margin-bottom: $dv-padding-md;
+        text-transform: uppercase;
+
+        @include media-breakpoint-down(md) {
+            font-size: $dv-font-size-xl;
+            margin-bottom: $dv-padding-sm;
+        }
+
+        @include media-breakpoint-down(sm) {
+            font-size: $dv-font-size-lg;
+        }
+    }    
+
+    &__day {
+        + .dv-schedule-page__day {
+            margin-top: $dv-padding-xl;
+
+            @include media-breakpoint-down(md) {
+                margin-top: $dv-padding-lg;
+            }
+    
+            @include media-breakpoint-down(sm) {
+                margin-top: $dv-padding-md;
+            }
+        }
+
+        hr {
+            border-top-color: $dv-green;;
+            flex-basis: 40%;
+        }
+    }
+
+    &__data {
+        color: $dv-white;
+        font: $dv-font-size-lg $dv-font-family;
+        line-height: calc(2rem + 1px);
+        padding: 0 $dv-padding-lg;
+        text-transform: uppercase;
+        white-space: nowrap;
+
+        @include media-breakpoint-down(md) {
+            font-size: $dv-font-size-sm;
+            padding: 0 $dv-padding-md;
+        }
+
+        @include media-breakpoint-down(sm) {
+            font-size: $dv-font-size-xs;
+            padding: 0 $dv-padding-md;
+        }
+    }
+}
